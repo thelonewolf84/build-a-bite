@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Build-A-Bite</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" th:href="@{/favicon.png}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/register.css}">
+    <link rel="stylesheet" th:href="@{/navbar.css}"/>
+</head>
+<body>
+
+<!-- Start of navbar -->
+<header th:replace = "fragments :: header"></header>
+<!-- End of navbar -->
+
+<h2 class="display-4 m-5 text-center">Registration Form</h2>
+<div class="container">
+    <form method="post">
+        <div class="form-row">
+            <div class="form-group col-md-6" >
+                <label class="form-label"> First Name:</label>
+                <input type="text" th:field="${registerFormDTO.firstName}" class="form-control" placeholder="Enter First Name">
+                <p class="error" th:errors="${registerFormDTO.firstName}"></p>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="form-label"> Last Name: </label>
+                <input type="text" th:field="${registerFormDTO.lastName}" class="form-control" placeholder="Enter Last Name">
+                <p class="error" th:errors="${registerFormDTO.lastName}"></p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label"> Email: </label>
+            <input type="email" th:field="${registerFormDTO.email}" class="form-control" placeholder="Enter Email">
+            <p class="error" th:errors="${registerFormDTO.email}"></p>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label"> Password: </label>
+            <input type="password" th:field="${registerFormDTO.password}" class="form-control" placeholder="Enter Password">
+            <p class="error" th:errors="${registerFormDTO.password}"></p>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Verify Password: </label>
+            <input type="password" th:field="${registerFormDTO.verifyPassword}" class="form-control" placeholder="Re-Enter Password">
+            <p class="error" th:errors="${registerFormDTO.verifyPassword}"></p>
+        </div>
+
+        <button type="submit" class="btn btn-danger">Register</button>
+    </form>
+</div>
+
+<div th:replace="fragments :: bootstrap-javascript"></div>
+</body>
+</html>

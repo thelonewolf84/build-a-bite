@@ -1,0 +1,24 @@
+body{
+    font-family: Arvo;
+}
+.card-header{
+  background: #AD2A31;
+  color: #fff;
+}
+
+.card-body{
+  margin: 0 auto;
+}
+
+.card-img-top{
+	height: 250px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.btn{
+  background-color: #AD2A31;
+  width: 40%;
+  color: white;
+  font-size: .80rem;
+}

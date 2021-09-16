@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Build-A-Bite</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" th:href="@{/favicon.png}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/navbar.css}"/>
+</head>
+<body>
+
+<!-- Nav Bar Section -->
+<nav th:replace="fragments :: nav-login"></nav>
+<!-- End of navbar -->
+
+<div class="container">
+    <h1 class="display-2 m-3 text-center">Add A Category</h1>
+    <form method="post">
+        <div lass="form-group">
+            <label for="tag">Category Name</label>
+            <input type="text" th:field="${tag.tagName}" class="form-control" id="tag" placeholder="Category Name">
+            <span th:errors="${tag.tagName}" class="error"></span>
+            <p class="error" th:text="${exists}"></p>
+        </div>
+        <button type="submit" class="btn" style="background-color: #AD2A31;">Add</button>
+    </form>
+</div>
+
+<div th:replace="fragments :: bootstrap-javascript"></div>
+</body>
+</html>

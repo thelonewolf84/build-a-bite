@@ -1,0 +1,15 @@
+/*nav bar*/
+body{
+    font-family: 'Arvo', serif;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: white;
+}
+.navbar-dark .navbar-nav .nav-link{
+  color: white;
+}
+
+a{
+    background-color: white;
+}
+/*end of nav bar*/

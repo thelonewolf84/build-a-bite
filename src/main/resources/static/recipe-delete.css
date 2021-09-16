@@ -1,0 +1,16 @@
+thead {
+    background-color: #AD2A31;
+}
+
+th {
+    color: white;
+}
+
+td {
+    width: 150px;
+}
+
+.img-thumbnail {
+    width: 150px;
+    height: 150px;
+}
